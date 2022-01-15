@@ -1,0 +1,56 @@
+////////////// {PRODUCTS} ////////////////
+
+###
+GET http://localhost:4000/api/products
+
+###
+POST http://localhost:4000/api/products
+Content-Type: application/json
+x-access-token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZGY5MzcwNTJkM2I3ZmUzZWRiYzViMCIsImlhdCI6MTY0MjIxNDc2NywiZXhwIjoxNjQyMzAxMTY3fQ.-YDJfTqYuIYfSMmn1NzVWJrn3gHLnryIiz--ZdRdZDg"
+
+{
+    "name": "Portatil Alienware",
+    "category": "Portatil",
+    "price": 3500000,
+    "imgURL": "https://i.dell.com/is/image/DellContent//content/dam/global-asset-library/Products/Notebooks/Alienware/17_area-51m_r2_non-touch_tobii/awarea-51mnt_tobii_lnb_00055rb55_gy.psd?fmt=pjpg&pscan=auto&scl=1&wid=3570&hei=2456&qlt=100,0&resMode=sharp2&size=3570,2456"
+}
+
+###
+PUT http://localhost:4000/api/products/61dccb8f4b0fc71ee21d6dbd
+Content-Type: application/json
+
+{
+    "name": "'Portatil Acer",
+    "category": "Portatil",
+    "price": 1600000,
+    "imgURL": "https://www.alkosto.com/medias/4710180836332-001-750Wx750H?context=bWFzdGVyfGltYWdlc3wyMTExOTB8aW1hZ2UvanBlZ3xpbWFnZXMvaGMxL2g4ZC85NDIwMzA0MjUyOTU4LmpwZ3w5ZTVjMmEwM2MxYTEwYjBmMDM2Njg0YzE5NTM2MDliNTE2NWM3MGI4MDk4MWE1MTc3NDIwMWIxNmQ0OGYyMzk4"
+}
+
+###
+DELETE http://localhost:4000/api/products/61dcbf54da0efc7c13ad231b
+
+
+////////////// {AUTH} ////////////////
+
+###
+POST http://localhost:4000/api/auth/signup
+Content-Type: application/json
+
+{
+    "username": "Joe",
+    "email": "joe@gmail.com",
+    "password": "123456789",
+    "roles": [
+        "admin", "moderator"
+    ]
+    
+}
+
+###
+POST http://localhost:4000/api/auth/signin
+Content-Type: application/json
+
+{
+    "email": "joe@gmail.com",
+    "password": "123456789"
+}
